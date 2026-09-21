@@ -1,53 +1,29 @@
 <!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>2026 행복한 한가위 · 손형락 드림</title>
-<meta name="theme-color" content="#f7f0e3">
 <style>
 :root{--cream:#f7f0e3;--ink:#26364d;--gold:#edc268;--orange:#df7d3b;--blue1:#6d7d91;--blue2:#354a66}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#eee7da;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:var(--ink)}
-body{overflow-x:hidden}.wrap{min-height:100svh;display:grid;place-items:center;padding:14px}
-.card{position:relative;width:min(430px,100%);height:min(820px,calc(100svh - 28px));min-height:680px;overflow:hidden;border-radius:30px;background:var(--cream);box-shadow:0 20px 60px #2732462c}
-.moon{position:absolute;width:190px;height:190px;border-radius:50%;right:18px;top:180px;background:radial-gradient(circle at 35% 30%,#f8d98a,#efbf59);box-shadow:0 0 40px #efbf5960;animation:moon 5s ease-in-out infinite}
-@keyframes moon{50%{transform:scale(1.025);box-shadow:0 0 60px #efbf5980}}
-.branch{position:absolute;right:-30px;top:25px;width:230px;height:100px;border-top:7px solid #4d493e;border-radius:55%;transform:rotate(-9deg)}
-.fruit{position:absolute;width:40px;height:36px;border-radius:45%;background:var(--orange);top:65px;box-shadow:inset 0 4px #f09b55}.f1{right:78px}.f2{right:23px;top:82px}
-.leaf{position:absolute;width:13px;height:28px;background:#d89a3d;border-radius:90% 0 90% 0;z-index:2;animation:fall 7s ease-in-out infinite}.l1{top:350px;left:70%}.l2{top:410px;left:57%;animation-delay:-2.5s}.l3{top:460px;left:83%;animation-delay:-4.5s}
-@keyframes fall{50%{transform:translate(16px,28px) rotate(120deg)}100%{transform:translate(-5px,58px) rotate(230deg)}}
+.wrap{min-height:100svh;display:grid;place-items:center;padding:14px}.card{position:relative;width:min(430px,100%);height:min(820px,calc(100svh - 28px));min-height:680px;overflow:hidden;border-radius:30px;background:var(--cream);box-shadow:0 20px 60px #2732462c}
+.moon{position:absolute;width:190px;height:190px;border-radius:50%;right:18px;top:180px;background:radial-gradient(circle at 35% 30%,#f8d98a,#efbf59);box-shadow:0 0 40px #efbf5960;animation:moon 5s ease-in-out infinite}@keyframes moon{50%{transform:scale(1.025);box-shadow:0 0 60px #efbf5980}}
+.branch{position:absolute;right:-30px;top:25px;width:230px;height:100px;border-top:7px solid #4d493e;border-radius:55%;transform:rotate(-9deg)}.fruit{position:absolute;width:40px;height:36px;border-radius:45%;background:var(--orange);top:65px}.f1{right:78px}.f2{right:23px;top:82px}
+.leaf{position:absolute;width:13px;height:28px;background:#d89a3d;border-radius:90% 0 90% 0;z-index:2;animation:fall 7s ease-in-out infinite}.l1{top:350px;left:70%}.l2{top:410px;left:57%;animation-delay:-2.5s}.l3{top:460px;left:83%;animation-delay:-4.5s}@keyframes fall{50%{transform:translate(16px,28px) rotate(120deg)}100%{transform:translate(-5px,58px) rotate(230deg)}}
 .hill{position:absolute;width:570px;height:250px;border-radius:50% 50% 0 0;bottom:105px;left:-170px;background:var(--blue1);transform:rotate(8deg)}.hill.b{left:120px;bottom:78px;background:var(--blue2);transform:rotate(-8deg)}
 .river{position:absolute;left:0;right:0;bottom:0;height:190px;background:#fbf4e9;clip-path:polygon(0 37%,38% 16%,67% 31%,43% 49%,82% 65%,100% 100%,0 100%)}
-.content{position:relative;z-index:3;padding:50px 34px}.year{font:24px Georgia,serif;letter-spacing:7px}h1{font-family:Georgia,"Nanum Myeongjo","Apple SD Gothic Neo",serif;font-size:50px;font-weight:500;line-height:1.08;margin:22px 0 18px}.intro{font-size:19px;line-height:1.75}
-.open{position:absolute;z-index:6;left:12%;bottom:44px;width:76%;padding:17px 12px;border:1px solid #fff;border-radius:999px;background:#fff9;backdrop-filter:blur(8px);box-shadow:0 8px 28px #765d3028;color:#51432e;font-size:17px;cursor:pointer}
-.open:active,.close:active{transform:scale(.98)}
-.message{position:absolute;z-index:20;inset:0;display:grid;place-items:center;padding:32px;background:#f8f1e6f7;opacity:0;visibility:hidden;pointer-events:none;transition:.38s ease}
-.message.show{opacity:1;visibility:visible;pointer-events:auto}.paper{text-align:center;max-width:345px;transform:translateY(20px);transition:.38s ease}.show .paper{transform:none}
-.to{font-size:21px;margin-bottom:27px}.msg{font-family:Georgia,"Nanum Myeongjo","Apple SD Gothic Neo",serif;font-size:19px;line-height:2;word-break:keep-all}.from{margin-top:30px;font-size:18px;font-weight:600}.close{margin-top:30px;border:0;border-radius:999px;background:var(--blue2);color:#fff;padding:12px 24px;font-size:15px;cursor:pointer}
-.admin{position:fixed;right:10px;bottom:8px;font-size:10px;color:#0000;user-select:none}
-@media(max-height:720px){.card{min-height:640px}.content{padding-top:35px}h1{font-size:43px}.moon{width:160px;height:160px;top:150px}.open{bottom:28px}}
-</style></head>
-<body>
-<div class="wrap"><main class="card">
-<div class="moon"></div><div class="branch"></div><i class="fruit f1"></i><i class="fruit f2"></i>
-<i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i><div class="hill"></div><div class="hill b"></div><div class="river"></div>
-<section class="content"><div class="year">2026</div><h1>행복한<br>한가위</h1><div class="intro">한가위를 맞아<br>가족과 즐거운 시간<br>되시길 바랍니다.</div></section>
-<button class="open" id="openBtn">인사말을 열어보세요</button>
-<section class="message" id="message" aria-hidden="true"><div class="paper"><div class="to" id="recipient"></div><div class="msg" id="msg"></div><div class="from">손형락 드림</div><button class="close" id="closeBtn">카드로 돌아가기</button></div></section>
-</main></div>
+.content{position:relative;z-index:3;padding:50px 34px}.year{font:24px Georgia,serif;letter-spacing:7px}h1{font-family:Georgia,"Apple SD Gothic Neo",serif;font-size:50px;font-weight:500;line-height:1.08;margin:22px 0 18px}.intro{font-size:19px;line-height:1.75}
+.open{position:absolute;z-index:6;left:12%;bottom:44px;width:76%;padding:17px;border:1px solid #fff;border-radius:999px;background:#fff9;backdrop-filter:blur(8px);color:#51432e;font-size:17px;cursor:pointer}
+.message{position:absolute;z-index:20;inset:0;display:grid;place-items:center;padding:32px;background:#f8f1e6f8;opacity:0;visibility:hidden;pointer-events:none;transition:.38s}.message.show{opacity:1;visibility:visible;pointer-events:auto}.paper{text-align:center;max-width:345px;transform:translateY(20px);transition:.38s}.show .paper{transform:none}.to{font-size:21px;margin-bottom:27px}.msg{font-family:Georgia,"Apple SD Gothic Neo",serif;font-size:19px;line-height:2;word-break:keep-all}.from{margin-top:30px;font-size:18px;font-weight:600}.close{margin-top:30px;border:0;border-radius:999px;background:var(--blue2);color:#fff;padding:12px 24px;font-size:15px}
+.admin{display:none;min-height:100svh;padding:28px 18px;background:#f4efe6}.panel{max-width:560px;margin:auto;background:white;border-radius:24px;padding:25px;box-shadow:0 12px 40px #0001}.panel h2{margin:0 0 8px}.panel p{line-height:1.6;color:#667}.field{margin-top:18px}.field label{display:block;font-weight:700;margin-bottom:7px}.field input,.field select{width:100%;padding:14px;border:1px solid #d6d6d6;border-radius:12px;font-size:16px}.actions{display:flex;gap:9px;margin-top:20px}.actions button{flex:1;border:0;border-radius:12px;padding:14px;background:var(--blue2);color:white;font-size:15px}.actions .light{background:#e9edf1;color:#26364d}.result{margin-top:18px;padding:14px;border-radius:12px;background:#f5f6f7;word-break:break-all;line-height:1.5}.hint{font-size:13px;color:#778;margin-top:10px}
+</style></head><body>
+<div id="cardView" class="wrap"><main class="card"><div class="moon"></div><div class="branch"></div><i class="fruit f1"></i><i class="fruit f2"></i><i class="leaf l1"></i><i class="leaf l2"></i><i class="leaf l3"></i><div class="hill"></div><div class="hill b"></div><div class="river"></div><section class="content"><div class="year">2026</div><h1>행복한<br>한가위</h1><div class="intro">한가위를 맞아<br>가족과 즐거운 시간<br>되시길 바랍니다.<br><span style="display:inline-block;margin-top:12px;font-size:16px;font-weight:600;">손형락 드림</span></div></section><button class="open" id="openBtn">인사말을 열어보세요</button><section class="message" id="message"><div class="paper"><div class="to" id="recipient"></div><div class="msg" id="msg"></div><div class="from">손형락 드림</div><button class="close" id="closeBtn">카드로 돌아가기</button></div></section></main></div>
+<section id="adminView" class="admin"><div class="panel"><h2>2026 추석카드 링크 만들기</h2><p>받는 분의 이름과 관계를 선택하면 카카오톡으로 보낼 개인 링크가 만들어집니다.</p><div class="field"><label for="n">받는 분 이름</label><input id="n" placeholder="예: 김철수"></div><div class="field"><label for="t">인사말 종류</label><select id="t"><option value="basic">일반</option><option value="business">사업 관계</option><option value="church">교회 지인</option><option value="friend">친구</option></select></div><div class="actions"><button id="make">링크 만들기</button><button id="copy" class="light">링크 복사</button></div><div id="result" class="result">이름을 입력한 뒤 ‘링크 만들기’를 누르세요.</div><div class="hint">관리화면 주소: https://harrysohny.github.io/chuseok2026/?admin=1</div></div></section>
 <script>
+const BASE="https://harrysohny.github.io/chuseok2026/";
 const q=new URLSearchParams(location.search);
-const name=(q.get('name')||'').trim();
-const type=(q.get('type')||'basic').trim();
-const messages={
- basic:'한가위를 맞아 가족과 함께<br>즐겁고 따뜻한 시간 보내시길 바랍니다.<br>늘 건강과 행복이 함께하시고,<br>풍성하고 평안한 명절 되십시오.',
- business:'한가위를 맞아 가족과 함께<br>즐겁고 따뜻한 시간 보내시길 바랍니다.<br>늘 보내주시는 성원에 감사드리며,<br>건강과 행복이 가득한 풍성한 명절 되십시오.',
- church:'풍성한 한가위를 맞아<br>가정에 사랑과 평안이 가득하시길 기원합니다.<br>가족과 함께 따뜻하고 감사가 넘치는<br>명절 보내십시오.',
- friend:'한가위를 맞아 가족과 함께<br>즐겁고 행복한 시간 보내시길 바랍니다.<br>건강하고 넉넉한 웃음이 가득한<br>추석 되세요.'
-};
-document.getElementById('recipient').textContent=name ? name+'님께' : '소중한 분께';
-document.getElementById('msg').innerHTML=messages[type]||messages.basic;
-const modal=document.getElementById('message');
-document.getElementById('openBtn').onclick=()=>{modal.classList.add('show');modal.setAttribute('aria-hidden','false')};
-document.getElementById('closeBtn').onclick=()=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true')};
+const messages={basic:'한가위를 맞아 가족과 함께<br>즐겁고 따뜻한 시간 보내시길 바랍니다.<br>늘 건강과 행복이 함께하시고,<br>풍성하고 평안한 명절 되십시오.',business:'한가위를 맞아 가족과 함께<br>즐겁고 따뜻한 시간 보내시길 바랍니다.<br>늘 보내주시는 성원에 감사드리며,<br>건강과 행복이 가득한 풍성한 명절 되십시오.',church:'풍성한 한가위를 맞아<br>가정에 사랑과 평안이 가득하시길 기원합니다.<br>가족과 함께 따뜻하고 감사가 넘치는<br>명절 보내십시오.',friend:'한가위를 맞아 가족과 함께<br>즐겁고 행복한 시간 보내시길 바랍니다.<br>건강하고 넉넉한 웃음이 가득한<br>추석 되세요.'};
+if(q.get('admin')==='1'){cardView.style.display='none';adminView.style.display='block'}else{const name=(q.get('name')||'').trim(),type=q.get('type')||'basic';recipient.textContent=name?name+'님께':'소중한 분께';msg.innerHTML=messages[type]||messages.basic}
+openBtn.onclick=()=>message.classList.add('show');closeBtn.onclick=()=>message.classList.remove('show');
+let made='';
+make.onclick=()=>{const name=n.value.trim();if(!name){alert('받는 분 이름을 입력해 주세요.');n.focus();return}made=BASE+'?name='+encodeURIComponent(name)+'&type='+encodeURIComponent(t.value);result.textContent=made};
+copy.onclick=async()=>{if(!made){make.click();if(!made)return}try{await navigator.clipboard.writeText(made);copy.textContent='복사되었습니다';setTimeout(()=>copy.textContent='링크 복사',1600)}catch(e){prompt('아래 링크를 복사해 주세요.',made)}};
 </script></body></html>
